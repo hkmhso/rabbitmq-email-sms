@@ -1,0 +1,40 @@
+server:
+  port: 9004
+
+spring:
+  ##redis配置
+  redis:
+    host: localhost
+    port: 6379
+    password:
+  ##include的值为：该模块依赖其他模块的指定的application-后缀名.yml，也就是说会同时加载其他模块的配置文件
+  profiles:
+    include: rabbitmq
+  ##邮件发送
+  mail:
+    ##发件服务器地址
+    host: smtp.qq.com
+    username: 2590392428@qq.com
+    ##密码(开启IMAP/SMTP服务颁发的授权码)
+    password: zhvytnngiqdodjee
+    properties:
+      mail:
+        smtp:
+          ##安全认证(默认是true)
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+#阿里云短信配置
+ali:
+  appId: "LTAI4GHjjcLpFsWXXS4G1e9S"
+  appSecret: "qsRBaz2RWiuubIufd0ox7Ykkwgp4in"
+  templateId: "SMS_190505520"
+  smsSign: "众之优"
+
+  ##配置Admin Server的地址
+#  boot:
+#    admin:
+#      url: http://localhost:8000
+
